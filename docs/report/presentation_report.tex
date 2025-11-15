@@ -1,0 +1,47 @@
+%% ACM Small Standard Format (without copyright/journal info)
+\documentclass[acmsmall,screen,nonacm]{acmart}
+
+%% Remove ACM reference format
+\settopmatter{printacmref=false, printccs=false}
+
+%% Essential packages
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{threeparttable}
+
+%% Title and author information
+\title{COSC 520 Presentation: Recommender Algorithms}
+
+\author{Riley Eaton}
+\email{ryeaton@student.ubc.ca}
+\affiliation{%
+  \institution{University of British Columbia}
+  \city{Kelowna}
+  \state{BC}
+  \country{Canada}
+}
+
+\author{Aarav Gosalia}
+\email{agosalia@student.ubc.ca}
+\affiliation{%
+  \institution{University of British Columbia}
+  \city{Kelowna}
+  \state{BC}
+  \country{Canada}
+}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction} \label{sec:introduction}
+\input{sections/introduction}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references/refs}
+
+\section*{Acknowledgments}
+Anthropic's Claude was used to help copy-edit this report. The complete source code and accompanying presentation are available at \url{https://github.com/rileyeaton-ubc/ubc-520-presentation}.
+
+\end{document}
