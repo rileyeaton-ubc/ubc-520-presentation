@@ -8,4 +8,4 @@ Our presentation is best viewed in Google Slides, [here](https://docs.google.com
 
 ## Report
 
-Our report was completed using LaTeX, and the compiled PDF can be viewed in this repository at [/docs/report/presentation_report.pdf](https://github.com/rileyeaton-ubc/ubc-520-presentation)
+Our report was completed using LaTeX, and the compiled PDF can be viewed in this repository at [/docs/report/presentation_report.pdf](https://github.com/rileyeaton-ubc/ubc-520-presentation/blob/main/docs/report/presentation_report.pdf)
