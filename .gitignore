@@ -339,4 +339,7 @@ TSWLatexianTemp*
 *.blg
 *.pre
 
+# macOS Finder metadata
+.DS_Store
+
 assignment.pdf
