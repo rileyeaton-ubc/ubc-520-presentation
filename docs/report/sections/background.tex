@@ -1,3 +1,29 @@
-Write about the background and literature review of recommender algorithms. Try to find a more recent algorithm or an algorithm that is developed previously (not very recent), but is in use in practice.
+The evolution of recommender algorithms from simple rule-based systems to deep learning architectures has been driven by data growth, computational advances, and the economic value of personalization. This evolution provides context for examining the privacy, fairness, and ethical challenges of modern recommender systems.
 
-Specifically write about what problems the algorithms address and how they are addressed. 
+\subsection{Early Approaches: Content-Based and Demographic Filtering}
+
+Content-based filtering recommends items similar to those a user has previously liked, using item features and user preferences to compute similarity~\cite{pazzani-content-based}. For example, recommending movies with similar genres or actors. While intuitive and privacy-preserving, these systems suffer from limited diversity and cannot leverage collective user patterns.
+
+Demographic filtering recommends items based on age, gender, or location, assuming users in similar demographic groups share preferences. However, this naive approach often reinforces stereotypes, and its effectiveness is limited in a diverse, modern world. These limitations motivated the development of collaborative filtering.
+
+\subsection{Collaborative Filtering: Leveraging Collective Intelligence}
+
+Collaborative filtering marked a paradigm shift in recommender systems. Resnick et al.~\cite{resnick-grouplens} introduced GroupLens, pioneering the idea that users who agreed in the past will likely agree in the future. User-based collaborative filtering identifies users with similar rating patterns and recommends items those users enjoyed. This enables serendipitous discovery and leverages collective intelligence. However, computing similarities between all user pairs becomes computationally prohibitive as the user base grows.
+
+To address this issue of scalability, Linden et al.~\cite{amazon-collaborative} developed item-to-item collaborative filtering at Amazon. This approach computes item similarities based on user co-interactions. Since items typically grow more slowly than users, and item similarities remain stable over time, they can be pre-computed. Despite these advances, collaborative filtering still faced cold-start problems (inability to recommend for new users or items with no interaction history) and sparse rating matrices (users rate only a tiny fraction of available items, leaving insufficient overlap for similarity computation).
+
+\subsection{Matrix Factorization: Uncovering Latent Factors}
+
+The Netflix Prize competition (held from 2006-2009) prompted the introduction of many novel matrix factorization techniques. Among the most influential contributions, Koren et al.~\cite{koren-matrix-factorize}---whose work was central to the winning solution---decomposed the sparse user-item rating matrix into two lower-dimensional matrices representing users and items in a shared latent factor space. Mathematically, the rating matrix $R \in \mathbb{R}^{m \times n}$ (with $m$ users and $n$ items) is approximated as $R \approx U \cdot V^T$, where $U \in \mathbb{R}^{m \times k}$ represents user latent factors, $V \in \mathbb{R}^{n \times k}$ represents item latent factors, and $k \ll \min(m,n)$ is the number of latent dimensions. Each row $u_i$ in $U$ is the latent factor vector for user $i$, and each row $v_j$ in $V$ is the latent factor vector for item $j$. The predicted rating for user $i$ and item $j$ is computed as $\hat{r}_{ij} = u_i \cdot v_j^T$, the dot product of their respective latent vectors~\cite{koren-matrix-factorize}.
+
+This approach handles sparsity, provides dimensionality reduction for computational efficiency, and captures meaningful latent concepts. These latent concepts would otherwise not be discoverable through manual feature engineering, as they emerge automatically from user-item interaction patterns. Techniques like SVD and ALS became the standard methods for learning these factorizations~\cite{koren-matrix-factorize}. However, matrix factorization assumes linear relationships and cannot easily incorporate temporal dynamics or rich metadata, motivating later exploration of non-linear approaches.
+
+\subsection{Deep Neural Networks: Modern Architectures}
+
+Deep learning revolutionized recommender systems by enabling the use of complex, non-linear representations. Covington et al.~\cite{youtube-deep} described YouTube's two-stage architecture: candidate generation (producing user embeddings to retrieve candidates) and ranking (scoring candidates using hundreds of features). Neural networks model non-linear feature interactions, incorporate heterogeneous features (categorical, continuous, sequential), and leverage transfer learning. These capabilities enable models to capture complex user preferences that linear methods miss and combine diverse data types into a single framework, while pre-trained representations improve performance with limited data.
+
+He et al.~\cite{he-ncf} introduced Neural Collaborative Filtering (NCF), which generalizes matrix factorization by replacing the dot product with a multi-layer network learning arbitrary interaction functions. Despite strong performance, deep recommenders require substantial computational resources, lack interpretability, and amplify privacy concerns by encoding societal biases from training data~\cite{zhang-dl}.
+
+\subsection{Current Trends and Hybrid Approaches}
+
+Contemporary recommender systems employ hybrid approaches combining collaborative filtering, matrix factorization, and deep learning. State-of-the-art techniques include graph neural networks for user-item-context relationships~\cite{wu-graph-nn}, reinforcement learning for long-term engagement~\cite{chen-reinforce}, and context-aware recommendations. These advances improve recommendation quality but intensify privacy, fairness, and ethical concerns. 
