@@ -4,7 +4,7 @@ This repository contains the presentation and subsequent report for UBC COSC 520
 
 ## Presentation
 
-Our presentation is best viewed in Google Slides, [here](https://docs.google.com/presentation/d/1TIzRQ4WJibS9PbczbrnPOismwSsbMXI93had91po118/edit?usp=sharing).
+Our presentation is best viewed in Google Slides, [here](https://docs.google.com/presentation/d/1TIzRQ4WJibS9PbczbrnPOismwSsbMXI93had91po118/edit?usp=sharing). Alternatively, it can be viewed in PDF format in this repository at [/docs/presentation/presentation.pdf](https://github.com/rileyeaton-ubc/ubc-520-presentation/blob/main/docs/presentation/presentation.pdf)
 
 ## Report
 
