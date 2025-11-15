@@ -1,4 +1,39 @@
-Analysis of the drawbacks and advantages of the algorithm(s). Write a critical
-overview of whether the algorithm is practical (e.g., in terms of computational
-cost and time/space complexity), in which scenarios or application it can be used,
-where does it fail, etc.
+Recommender systems influence not only what users see online, but also how they behave, what information they receive, and how they perceive the world. This section surveys key societal risks identified across multiple research studies, examining privacy concerns, fairness and exposure inequalities, psychological effects, and risks of ideological escalation. Together, these findings illustrate how engagement-optimized algorithms can create complex challenges beyond their technical objectives.
+
+\subsection{Privacy Risks: Profiling, Inference and Transparency}
+Modern recommender systems rely heavily on behavioural data, such as clicks, searches, and viewing time, to construct detailed user profiles. As noted in Zhang et al.\ (2014) \cite{zhang2014privacy}, much of this information is gathered implicitly, without explicit user awareness, which can contribute to perceptions of intrusiveness.
+
+A key concern is the system's ability to infer sensitive attributes. Even when users do not provide demographic or personal details directly, behavioural patterns may allow the system to infer characteristics such as age, gender, or health-related interests. The study finds that users are significantly more concerned when identifiable or sensitive data is involved.
+
+Control and transparency are also limited. Implicit data (e.g., browsing or purchase history) is processed automatically, and users are rarely informed about what is collected or how these signals affect recommendations.
+
+Finally, Zhang et al.\ (2014) \cite{zhang2014privacy} highlights the "privacy--personalization trade-off": more personalized recommendations typically require more data, increasing privacy risk. Users may receive better-targeted content, but at the cost of exposing more behavioural and potentially sensitive information.
+
+\subsection{Fairness and Exposure Inequality}
+Recommender systems often reinforce popularity bias, where already-popular items receive even more visibility while lesser-known creators struggle to gain exposure.
+
+Prior work notes that niche or long-tail items can still constitute a substantial portion of user interest—such as “niche books” accounting for 30--40\% of Amazon sales, yet these items remain less likely to surface in recommendation lists.
+
+Popularity can also reflect historical and structural inequalities, meaning that favoring already popular content may disadvantage protected or minority groups; for example, female music artists have been shown to be under-represented and therefore less frequently recommended. Such biases can reduce user autonomy, as preferences may be shaped by what the system promotes, even when users believe they are choosing freely.
+
+Transparency challenges further compound the issue: users generally have little visibility into why specific items are recommended or how recommendation decisions are made. As summarized in Deldjoo et al.\ (2023) \cite{deldjoo2023fairness}, popularity bias is deeply rooted in human cognition, and large-scale recommender systems risk amplifying these imbalances without careful design.
+
+\subsection{Psychological and Emotional Harms}
+Recommender systems can also influence users' emotional states and well-being.
+
+A growing body of evidence links short-form video platforms to compulsive use, mood disturbances, and body-image concerns. 
+Conte et al.\ (2024) \cite{conte2024tiktokmentalhealth} report that adolescents frequently experience "problematic use patterns," including compulsive refreshing and prolonged browsing, even when intending to stop, reflecting an engagement loop reinforced by personalization. Their review highlights that exposure to negative or distressing content often results in further recommendations of similar material, creating "emotional reinforcement loops" that can intensify sadness or distress rather than alleviate it.
+
+Body-image concerns also emerge as a recurrent finding. 
+Conte et al.\ (2024) \cite{conte2024tiktokmentalhealth} note that repeated exposure to idealised physical appearance and lifestyle content is associated with lower self-esteem and higher likelihood of body dissatisfaction among adolescents.
+
+Behavioural evidence from Piao et al.\ (2025) \cite{piao2025shortvideoaddiction} shows that addicted short-video users tend to consume a narrower range of content, suggesting the formation of emotional or topical echo chambers.
+
+Taken together, these findings indicate that recommender systems may unintentionally reinforce negative emotional states, encourage compulsive usage, and shape users’ self-perceptions, especially in vulnerable populations such as adolescents.
+
+\subsection{Algorithmic Radicalization and Ideological Drift}
+Recommender systems optimized for engagement can unintentionally promote extreme or polarizing content. Because emotionally charged material often generates stronger user responses, algorithms may favor it over more neutral alternatives. Haroon et al.\ (2023) \cite{haroon2023youtuberadicalization} show that YouTube’s recommendations “lead users… to ideologically biased and increasingly radical content” across both homepages and up-next suggestions. Similarly, Whittaker et~al.\ report that YouTube “does amplify extreme and fringe content,” demonstrating how engagement-driven ranking can reward more sensational material \cite{whittaker2021extremist}.
+
+A second concern is progressive escalation. Users may begin with mild or mainstream content but gradually receive stronger or more extreme recommendations as the system adapts to their engagement patterns. \cite{haroon2023youtuberadicalization}
+
+Finally, recommender systems can narrow users’ informational environments by repeatedly surfacing similar content. Rodilosso argues that filter bubbles “can lead to polarization and radicalization of individuals’ opinions,” as algorithm-driven experiences keep users “confined to our comfort zone” and reduce exposure to opposing viewpoints \cite{rodilosso2024filterbubbles}. This combination of engagement bias, escalation, and narrowing can create pathways through which recommender systems contribute to ideological drift.
